@@ -6,8 +6,12 @@ type Props = {}
 
 const hash: { [key: string]: string } = {
   '/#/': '我的项目',
-  '/#/blogs': '我的博客'
+  '/#/blog': '我的博客'
 };
+
+const list = ['请选择',
+  {'https://i.loli.net/2020/12/27/xb3fypFjgRuAOae.png': '我的项目'},
+  {'https://i.loli.net/2020/12/27/N4sI5foUGS3MtdH.png': '我的博客'}];
 
 const Frame: React.FC<Props> = (props) => {
   const [open, setOpen] = useState(false);
@@ -37,13 +41,12 @@ const Frame: React.FC<Props> = (props) => {
         contentStyle={{color: '#A6A6A6', textAlign: 'center', paddingTop: 42}}
         sidebar={
           <List>
-            {['请选择', '我的项目', '我的博客'].map((i, index) => {
+            {list.map((i, index) => {
               if (index === 0) {
                 return (<List.Item key={index} multipleLine>{i}</List.Item>);
               }
-              return (<List.Item key={index} onClick={openTarget(i)}
-                                 thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png">
-                {i}
+              return (<List.Item key={index} onClick={openTarget(Object.values(list[index])[0])} thumb={Object.keys(list[index])[0]}>
+                {Object.values(i)[0]}
               </List.Item>);
             })}
           </List>
