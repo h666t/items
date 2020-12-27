@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './frame.scss';
 import {Drawer, List, NavBar, Icon} from 'antd-mobile';
 
-type Props = {}
+
 
 const hash: { [key: string]: string } = {
   '/#/': '我的项目',
@@ -13,7 +13,7 @@ const list = ['请选择',
   {'https://i.loli.net/2020/12/27/xb3fypFjgRuAOae.png': '我的项目'},
   {'https://i.loli.net/2020/12/27/N4sI5foUGS3MtdH.png': '我的博客'}];
 
-const Frame: React.FC<Props> = (props) => {
+const Frame: React.FC = (props) => {
   const [open, setOpen] = useState(false);
   const onOpenChange = () => {
     setOpen(i => !i);
@@ -45,7 +45,7 @@ const Frame: React.FC<Props> = (props) => {
               if (index === 0) {
                 return (<List.Item key={index} multipleLine>{i}</List.Item>);
               }
-              return (<List.Item key={index} onClick={openTarget(Object.values(list[index])[0])} thumb={Object.keys(list[index])[0]}>
+              return (<List.Item key={index} onClick={openTarget(Object.values(list[index])[0]!)} thumb={Object.keys(list[index])[0]}>
                 {Object.values(i)[0]}
               </List.Item>);
             })}
