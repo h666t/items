@@ -5,8 +5,8 @@ import {Drawer, List, NavBar, Icon} from 'antd-mobile';
 
 
 const hash: { [key: string]: string } = {
-  '/#/': '我的项目',
-  '/#/blog': '我的博客'
+  '/items/#/': '我的项目',
+  '/items/#/blog': '我的博客'
 };
 
 const list = ['请选择',
@@ -25,7 +25,7 @@ const Frame: React.FC = (props) => {
           window.location.href = `${key}`;
           setOpen(i => false);
         } else {
-          window.location.href = `/#/`;
+          window.location.href = `/items/#/`;
           setOpen(i => false);
         }
       }

@@ -28,6 +28,11 @@ const reducer = (state :any, action: any) => {
         url: 'http://huang-haotian.gitee.io/gastly/',
         github: 'https://github.com/h666t/Gastly'
       },
+      'canvas': {
+        name : "canvas画板",
+        url : "http://huang-haotian.gitee.io/canvas/",
+        github : "https://github.com/h666t/canvas"
+      },
       'to-do-it': {
         name: '命令行to-do工具',
         github: 'https://github.com/h666t/todoit-cli-nodejs'
