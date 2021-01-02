@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Switch, HashRouter as Router, Route } from 'react-router-dom'
 import { Items } from 'view/items/Items';
@@ -9,6 +9,9 @@ import {Blog} from '../blog/Blog';
 type Props = {}
 
 const Home1: React.FC<Props> = (props) => {
+  useEffect(()=>{
+    console.log(props);
+  })
   return (
     <>
       <Frame>
@@ -32,16 +35,10 @@ const Home1: React.FC<Props> = (props) => {
 
 const mapStateToProps = (state: any) => {
   return {
-    n: state.n
+    items: state.items
   }
 }
 
-const mapDispatchToProps = {
-  add1: () => {
-    return {type: 'add', payload: 1}
-  }
-}
-
-const Home = connect(mapStateToProps, mapDispatchToProps)(Home1)
+const Home = connect(mapStateToProps)(Home1)
 
 export {Home}
