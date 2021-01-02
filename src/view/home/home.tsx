@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Switch, HashRouter as Router, Route } from 'react-router-dom'
 import { Items } from 'view/items/Items';
 import {Frame} from '../frame/Frame';
-import {Blog} from '../blog/Blog';
+import {Blog} from 'view/blog/Blog';
 
 
 type Props = {}

@@ -10,8 +10,8 @@ const hash: { [key: string]: string } = {
 };
 
 const list = ['请选择',
-  {'https://i.loli.net/2020/12/27/xb3fypFjgRuAOae.png': '我的项目'},
-  {'https://i.loli.net/2020/12/27/N4sI5foUGS3MtdH.png': '我的博客'}];
+  {'https://i.loli.net/2020/12/27/N4sI5foUGS3MtdH.png': '我的博客'},
+  {'https://i.loli.net/2020/12/27/xb3fypFjgRuAOae.png': '我的项目'},];
 
 const Frame: React.FC = (props) => {
   const [open, setOpen] = useState(false);
